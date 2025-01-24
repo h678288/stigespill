@@ -14,7 +14,7 @@ public class Brett {
    *  Stigene inisialiseres basert på standard stigespill utgitt av Capellen Damm
    */
   public Brett() {
-    stiger = new HashMap<Integer, Integer>();
+    stiger = new HashMap<>();
     stiger.put(1, 40);
     stiger.put(8, 10);
     stiger.put(36, 52);

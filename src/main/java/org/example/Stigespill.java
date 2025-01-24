@@ -13,7 +13,7 @@ public class Stigespill {
   private final List<Spiller> spillerList;
 
   public Stigespill(int spillere) {
-    spillerList = new ArrayList<Spiller>();
+    spillerList = new ArrayList<>();
     for (int i = 0; i < spillere; i++) {
       spillerList.add(new Spiller(i + 1));
     }

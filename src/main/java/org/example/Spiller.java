@@ -1,8 +1,5 @@
 package org.example;
 
-import java.util.Map;
-import java.util.Set;
-
 public class Spiller {
 
   private final int id;
@@ -15,7 +12,7 @@ public class Spiller {
 
   public void flytt(Terning terning, Brett brett){
     posisjon += terning.rull();
-    brett.sjekkPosisjon(posisjon);
+    setPosisjon(brett.sjekkPosisjon(posisjon));
   }
 
   public boolean harVunnet() {
@@ -28,5 +25,9 @@ public class Spiller {
 
   public int getPosisjon() {
     return posisjon;
+  }
+
+  public void setPosisjon(int posisjon) {
+    this.posisjon = posisjon;
   }
 }
