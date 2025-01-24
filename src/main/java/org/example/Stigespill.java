@@ -8,9 +8,9 @@ public class Stigespill {
   public static final int MAX_POENG = 90;
   public final int TERNING_STORRELSE = 6;
 
-  private Brett brett;
-  private Terning terning;
-  private List<Spiller> spillerList;
+  private final Brett brett;
+  private final Terning terning;
+  private final List<Spiller> spillerList;
 
   public Stigespill(int spillere) {
     spillerList = new ArrayList<Spiller>();

@@ -4,9 +4,9 @@ import java.util.Random;
 
 public class Terning {
 
-  private Random rand = new Random();
+  private final Random rand = new Random();
 
-  private int storrelse;
+  private final int storrelse;
 
   public Terning(int storrelse) {
     this.storrelse = storrelse;

@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class Spiller {
 
-  private int id;
+  private final int id;
   private int posisjon;
 
   public Spiller(int id){

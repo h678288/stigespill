@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Brett {
 
-  private Map<Integer, Integer> stiger;
+  private final Map<Integer, Integer> stiger;
 
   /*
    *  Oppretter et HashMap med stiger og ødelagtestiger
