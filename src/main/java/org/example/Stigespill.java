@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Stigespill {
 
-  public static final int MAX_POENG = 90;
+  public static final int MAX_POENG = 100;
   public static final int TERNING_STORRELSE = 6;
 
   private final Brett brett;

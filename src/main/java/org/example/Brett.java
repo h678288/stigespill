@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Brett {
 
-  private final Map<Integer, Integer> stiger;
+  private final Map<Integer, Integer> stigerOgSlanger = new HashMap<>();
 
   /*
    *  Oppretter et HashMap med stiger og ødelagtestiger
@@ -14,20 +14,26 @@ public class Brett {
    *  Stigene inisialiseres basert på standard stigespill utgitt av Capellen Damm
    */
   public Brett() {
-    stiger = new HashMap<>();
-    stiger.put(1, 40);
-    stiger.put(8, 10);
-    stiger.put(36, 52);
-    stiger.put(43, 62);
-    stiger.put(49, 79);
-    stiger.put(65, 82);
-    stiger.put(68, 85);
-    stiger.put(33, 3);
-    stiger.put(24, 5);
-    stiger.put(74, 12);
-    stiger.put(64, 27);
-    stiger.put(56, 37);
-    stiger.put(87, 75);
+    stigerOgSlanger.put(2, 38);
+    stigerOgSlanger.put(4, 14);
+    stigerOgSlanger.put(8, 31);
+    stigerOgSlanger.put(21, 42);
+    stigerOgSlanger.put(28, 84);
+    stigerOgSlanger.put(36, 44);
+    stigerOgSlanger.put(51, 67);
+    stigerOgSlanger.put(71, 91);
+    stigerOgSlanger.put(80, 100);
+    stigerOgSlanger.put(74, 12);
+    stigerOgSlanger.put(98, 78);
+    stigerOgSlanger.put(95, 75);
+    stigerOgSlanger.put(93, 73);
+    stigerOgSlanger.put(87, 24);
+    stigerOgSlanger.put(64, 60);
+    stigerOgSlanger.put(62, 18);
+    stigerOgSlanger.put(56, 53);
+    stigerOgSlanger.put(49, 11);
+    stigerOgSlanger.put(47, 26);
+    stigerOgSlanger.put(16, 6);
   }
 
   /**
@@ -36,6 +42,6 @@ public class Brett {
    * @return oppdatert poengsum eller samme poengsum
    */
   public int sjekkPosisjon(int poeng) {
-    return stiger.getOrDefault(poeng, poeng);
+    return stigerOgSlanger.getOrDefault(poeng, poeng);
   }
 }
