@@ -8,7 +8,7 @@ public class Brett {
   private final Map<Integer, Integer> stigerOgSlanger = new HashMap<>();
 
   /*
-   *  Oppretter et HashMap med stiger og ødelagtestiger
+   *  Oppretter et HashMap med stiger og slanger
    *  Et key-value par med positiv stigning øker poeng
    *  Et key-value par med negativ stigning minker poeng
    */
@@ -45,8 +45,7 @@ public class Brett {
    * @param poeng (posisjon)
    * @return oppdatert poengsum
    */
-  public int sjekkPosisjon(int poeng, int forigePoengsum) {
-    if(poeng > Stigespill.MAX_POENG) return forigePoengsum;
+  public int sjekkPosisjon(int poeng) {
     return stigerOgSlanger.getOrDefault(poeng, poeng);
   }
 }

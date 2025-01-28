@@ -4,12 +4,11 @@ import java.util.Random;
 
 public class Terning {
 
-  private final Random rand = new Random();
+  private final Random rand;
 
-  private final int storrelse;
 
-  public Terning(int storrelse) {
-    this.storrelse = storrelse;
+  public Terning() {
+    this.rand = new Random();
   }
 
   /**
@@ -17,7 +16,7 @@ public class Terning {
    * @return
    */
   public int trill() {
-    return rand.nextInt(storrelse) + 1;
+    return rand.nextInt(6) + 1;
   }
 
 }

@@ -4,30 +4,21 @@ public class Spiller {
 
   private final int id;
   private int posisjon;
-  private final Terning terning;
+  private boolean kanStarte;
 
   public Spiller(int id){
     this.id = id;
     this.posisjon = 0;
-    this.terning = new Terning(Stigespill.TERNING_STORRELSE);
+    this.kanStarte = false;
   }
 
-  /**
-   *
-   * @param ruter
-   */
-  public void flytt(int ruter){
-    posisjon += ruter;
+  public boolean kanStarte(){
+    return kanStarte;
   }
 
-  /**
-   *
-   * @return
-   */
-  public int trillTerning() {
-    return terning.trill();
+  public void setKanStarte(boolean kanStarte){
+    this.kanStarte = kanStarte;
   }
-
   /**
    *
    * @return
