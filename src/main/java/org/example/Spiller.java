@@ -33,7 +33,7 @@ public class Spiller {
    * @return
    */
   public boolean harVunnet() {
-    return posisjon >= Stigespill.MAX_POENG;
+    return posisjon == Stigespill.MAX_POENG;
   }
 
   public int getId() {

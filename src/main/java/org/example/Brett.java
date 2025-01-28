@@ -11,7 +11,6 @@ public class Brett {
    *  Oppretter et HashMap med stiger og ødelagtestiger
    *  Et key-value par med positiv stigning øker poeng
    *  Et key-value par med negativ stigning minker poeng
-   *  Stigene inisialiseres basert på standard stigespill utgitt av Capellen Damm
    */
   public Brett() {
     // Stiger
@@ -46,7 +45,8 @@ public class Brett {
    * @param poeng (posisjon)
    * @return oppdatert poengsum
    */
-  public int sjekkPosisjon(int poeng) {
+  public int sjekkPosisjon(int poeng, int forigePoengsum) {
+    if(poeng > Stigespill.MAX_POENG) return forigePoengsum;
     return stigerOgSlanger.getOrDefault(poeng, poeng);
   }
 }

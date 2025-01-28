@@ -33,7 +33,7 @@ public class Stigespill {
         spiller.flytt(kast);
 
         int forStige = spiller.getPosisjon();
-        int stige = brett.sjekkPosisjon(spiller.getPosisjon());
+        int stige = brett.sjekkPosisjon(spiller.getPosisjon(), forigePosisjon);
         spiller.setPosisjon(stige);
 
         System.out.printf(
@@ -42,7 +42,7 @@ public class Stigespill {
         );
 
         if (spiller.getPosisjon() != forStige) {
-          System.out.printf("Spiller %d traff en stige på posisjon %d og landet på posisjon %d!\n",
+          System.out.printf("Spiller %d traff en stige / slange på posisjon %d og landet på posisjon %d!\n",
                   spiller.getId(), forStige, spiller.getPosisjon());
         }
 
