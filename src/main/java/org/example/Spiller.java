@@ -9,7 +9,7 @@ public class Spiller {
   public Spiller(int id){
     this.id = id;
     this.posisjon = 0;
-    this.kanStarte = false;
+    this.kanStarte = true;
   }
 
   public boolean kanStarte(){

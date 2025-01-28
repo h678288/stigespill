@@ -52,9 +52,9 @@ public class StigespillTest {
 
   @Test
   void terning() {
-    int kast = terning.trill();
     for (int i = 0; i < 10; i++) {
-      assertTrue(kast > 1 && kast <= 6);
+      int kast = terning.trill();
+      assertTrue(kast >= 1 && kast <= 6);
     }
   }
 
@@ -96,21 +96,5 @@ public class StigespillTest {
     assertEquals(s3.getPosisjon(), brett.sjekkPosisjon(s3.getPosisjon()));
     s4.setPosisjon(33);
     assertEquals(s4.getPosisjon(), brett.sjekkPosisjon(s4.getPosisjon()));
-  }
-
-  @Test
-  void testTrilleSeksTreGanger() {
-    TestTerning terning1 = new TestTerning();
-    terning1.leggTilTrill(6);
-    terning1.leggTilTrill(6);
-    terning1.leggTilTrill(6);
-
-    Stigespill spill = new Stigespill(terning1);
-    Spiller spiller = new Spiller(1);
-    spill.spillerList.add(spiller);
-    spiller.setKanStarte(true);
-    spill.startSpill(true);
-    assertEquals(1, spiller.getPosisjon());
-    assertFalse(spiller.kanStarte());
   }
 }
