@@ -12,7 +12,11 @@ public class Terning {
     this.storrelse = storrelse;
   }
 
-  public int rull() {
+  /**
+   *
+   * @return
+   */
+  public int trill() {
     return rand.nextInt(storrelse) + 1;
   }
 

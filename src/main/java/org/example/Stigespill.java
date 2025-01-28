@@ -6,35 +6,54 @@ import java.util.List;
 public class Stigespill {
 
   public static final int MAX_POENG = 90;
-  public final int TERNING_STORRELSE = 6;
+  public static final int TERNING_STORRELSE = 6;
 
   private final Brett brett;
-  private final Terning terning;
-  private final List<Spiller> spillerList;
+  private final List<Spiller> spillerList = new ArrayList<>();
 
   public Stigespill(int spillere) {
-    spillerList = new ArrayList<>();
+    if (spillere < 2 || spillere > 4) {
+      throw new IllegalArgumentException("Det må kun være mellom 2 og 4 spillere");
+    }
     for (int i = 0; i < spillere; i++) {
       spillerList.add(new Spiller(i + 1));
     }
     brett = new Brett();
-    terning = new Terning(TERNING_STORRELSE);
   }
 
   public void start() {
     boolean ferdig = false;
 
-    while(!ferdig) {
+    while (!ferdig) {
       for (Spiller spiller : spillerList) {
-        spiller.flytt(terning, brett);
-        System.out.printf("Spiller nr. %d er på posisjon %d\n", spiller.getId(), spiller.getPosisjon());
-        if(spiller.harVunnet()) {
-          System.out.printf("Spiller nr. %d har vunnet!", spiller.getId());
+        // lagrer variabler for consol output, derfor litt rotete
+        int kast = spiller.trillTerning();
+        int forigePosisjon = spiller.getPosisjon();
+
+        spiller.flytt(kast);
+
+        int forStige = spiller.getPosisjon();
+        int stige = brett.sjekkPosisjon(spiller.getPosisjon());
+        spiller.setPosisjon(stige);
+
+        System.out.printf(
+                "Spiller %d kastet %d og gikk fra posisjon %d til %d\n",
+                spiller.getId(), kast, forigePosisjon, spiller.getPosisjon()
+        );
+
+        if (spiller.getPosisjon() != forStige) {
+          System.out.printf("Spiller %d traff en stige på posisjon %d og landet på posisjon %d!\n",
+                  spiller.getId(), forStige, spiller.getPosisjon());
+        }
+
+        System.out.println();
+
+        if (spiller.harVunnet()) {
+          System.out.printf("Spiller nr. %d har vunnet!\n", spiller.getId());
           ferdig = true;
           break;
         }
       }
     }
   }
-
 }

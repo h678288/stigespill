@@ -30,6 +30,11 @@ public class Brett {
     stiger.put(87, 75);
   }
 
+  /**
+   *
+   * @param poeng (posisjon)
+   * @return oppdatert poengsum eller samme poengsum
+   */
   public int sjekkPosisjon(int poeng) {
     return stiger.getOrDefault(poeng, poeng);
   }
