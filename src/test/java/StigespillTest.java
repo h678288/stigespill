@@ -85,11 +85,11 @@ public class StigespillTest {
     Spiller s3 = spillere.get(3);
     Spiller s4 = spillere.get(4);
 
-    // posisjon 2 sender spiller til posisjon 38
+    // posisjon 98 sender spiller til posisjon 78
     s1.setPosisjon(98);
     assertEquals(78, brett.sjekkPosisjon(s1.getPosisjon()));
 
-    // posisjon 28 sender spiller til posisjon 84
+    // posisjon 62 sender spiller til posisjon 18
     s2.setPosisjon(62);
     assertEquals(18, brett.sjekkPosisjon(s2.getPosisjon()));
     s3.setPosisjon(1);

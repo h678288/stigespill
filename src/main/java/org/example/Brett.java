@@ -7,10 +7,8 @@ public class Brett {
 
   private final Map<Integer, Integer> stigerOgSlanger = new HashMap<>();
 
-  /*
+  /**
    *  Oppretter et HashMap med stiger og slanger
-   *  Et key-value par med positiv stigning øker poeng
-   *  Et key-value par med negativ stigning minker poeng
    */
   public Brett() {
     // Stiger
@@ -40,7 +38,7 @@ public class Brett {
 
   /**
    * Tar inn spillerens posisjon / poeng returnerer ny poengsum om
-   * spiller har truffet stiger eller slange. Returnerer parameter uten
+   * spiller har truffet en stige eller slange. Returnerer original poengsum
    * å endre det om spiller lander på vanlig rute
    * @param poeng (posisjon)
    * @return oppdatert poengsum
