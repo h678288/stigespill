@@ -10,6 +10,6 @@ public class Main {
     int spillere = s.nextInt();
     s.close();
     Stigespill spill = new Stigespill(spillere);
-    spill.start();
+    spill.startSpill();
   }
 }

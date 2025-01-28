@@ -21,7 +21,7 @@ public class Stigespill {
     brett = new Brett();
   }
 
-  public void start() {
+  public void startSpill() {
     boolean ferdig = false;
 
     while (!ferdig) {

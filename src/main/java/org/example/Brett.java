@@ -14,6 +14,7 @@ public class Brett {
    *  Stigene inisialiseres basert på standard stigespill utgitt av Capellen Damm
    */
   public Brett() {
+    // Stiger
     stigerOgSlanger.put(2, 38);
     stigerOgSlanger.put(4, 14);
     stigerOgSlanger.put(8, 31);
@@ -24,6 +25,8 @@ public class Brett {
     stigerOgSlanger.put(71, 91);
     stigerOgSlanger.put(80, 100);
     stigerOgSlanger.put(74, 12);
+
+    // Slanger
     stigerOgSlanger.put(98, 78);
     stigerOgSlanger.put(95, 75);
     stigerOgSlanger.put(93, 73);
@@ -37,9 +40,11 @@ public class Brett {
   }
 
   /**
-   *
+   * Tar inn spillerens posisjon / poeng returnerer ny poengsum om
+   * spiller har truffet stiger eller slange. Returnerer parameter uten
+   * å endre det om spiller lander på vanlig rute
    * @param poeng (posisjon)
-   * @return oppdatert poengsum eller samme poengsum
+   * @return oppdatert poengsum
    */
   public int sjekkPosisjon(int poeng) {
     return stigerOgSlanger.getOrDefault(poeng, poeng);
